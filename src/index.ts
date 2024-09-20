@@ -11,6 +11,11 @@ const app = express();
 app.use('/*', cors());
 app.use(express.json());
 connectToDatabase();
+
+// Root route
+app.get("/", (req, res) => {
+    res.send("hello from ganeshify");
+});
 app.use("/api/v1/user", userRoute);
 
 
